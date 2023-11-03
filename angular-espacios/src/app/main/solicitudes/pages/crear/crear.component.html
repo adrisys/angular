@@ -1,0 +1,168 @@
+<div fxFlexAlign="center" fxLayoutAlign="center center">
+  <form [formGroup]="formHorario" autocomplete="off">
+    <h1>{{ modoEditar ? "Editar" : "Crear" }} solicitud</h1>
+    <hr />
+    <div fxLayout="column wrap" fxLayoutGap="20px">
+      <mat-card>
+        <mat-card-subtitle>Datos personales</mat-card-subtitle>
+        <div fxLayout="row" fxLayoutGap="20px">
+          <div fxFlex>
+            <mat-form-field appearance="outline" fxFill>
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                formControlName="email"
+                (blur)="actualizarCamposPersona()"
+              />
+              <span
+                class="invalid-mat-form-field"
+                *ngIf="isNotValidField('email')"
+                >* Formato de email incorrecto</span
+              >
+            </mat-form-field>
+          </div>
+          <div fxFlex>
+            <mat-form-field appearance="outline" fxFill>
+              <mat-label>Nombre</mat-label>
+              <input matInput formControlName="nombre" />
+            </mat-form-field>
+          </div>
+
+          <div fxFlex>
+            <mat-form-field appearance="outline" fxFill>
+              <mat-label>Unidad/Departamento/Centro</mat-label>
+              <input matInput formControlName="unidad" />
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="20px">
+          <div fxFlex>
+            <mat-form-field appearance="outline" fxFill>
+              <mat-label>Teléfono</mat-label>
+              <input matInput formControlName="telefono" />
+            </mat-form-field>
+          </div>
+          <div fxFlex>
+            <mat-form-field appearance="outline" fxFill>
+              <mat-label>Cargo</mat-label>
+              <div>
+                <mat-select formControlName="cargo">
+                  <mat-option
+                    *ngFor="let cargo of cargos"
+                    value="{{ cargo }}"
+                    >{{ cargo }}</mat-option
+                  >
+                </mat-select>
+              </div>
+            </mat-form-field>
+          </div>
+          <div fxFlex></div>
+        </div>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-subtitle>Datos de la actividad</mat-card-subtitle>
+        <div fxLayout="row" fxLayoutGap="20px">
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Tipo</mat-label>
+              <mat-select formControlName="tipo">
+                <mat-option value="docente">Docente</mat-option>
+                <mat-option value="noDocente">No docente</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <!--
+                <div
+              *ngIf="
+                formHorario.controls['tipo'].value == 'docente' ||
+                !formHorario.controls['tipo'].value
+              "
+            >
+              Mostrar tipo de actividad
+            </div>
+        -->
+          </div>
+          <div fxFlex>
+            <mat-form-field appearance="outline" fxFill>
+              <mat-label>Actividad</mat-label>
+              <input matInput formControlName="nombreActividad" />
+              <span
+                class="invalid-mat-form-field"
+                *ngIf="isNotValidField('nombreActividad')"
+                >Al menos 5 caracteres</span
+              >
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-subtitle>Horario de la reserva</mat-card-subtitle>
+        <div fxLayout="row" fxLayoutGap="20px">
+          <div fxFlex>
+            <mat-form-field appearance="fill">
+              <mat-label>Rango de fechas</mat-label>
+              <mat-date-range-input [rangePicker]="picker">
+                <input
+                  matStartDate
+                  formControlName="start"
+                  placeholder="Start date"
+                />
+                <input
+                  matEndDate
+                  formControlName="end"
+                  placeholder="End date"
+                />
+              </mat-date-range-input>
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+          </div>
+          <div fxFlex>
+            <mat-form-field appearance="outline">
+              <mat-label>Día</mat-label>
+              <mat-select formControlName="dia">
+                <mat-option *ngFor="let dia of diasSemana" value="{{ dia }}">{{
+                  dia | titlecase
+                }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div fxFlex>
+            <mat-form-field appearance="outline">
+              <mat-label>Hora de inicio</mat-label>
+              <mat-select formControlName="horaInicio">
+                <mat-option *ngFor="let hora of horas" value="{{ hora }}">{{
+                  hora
+                }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div fxFlex>
+            <mat-form-field appearance="outline">
+              <mat-label>Hora de fin</mat-label>
+              <mat-select formControlName="horaFin">
+                <mat-option *ngFor="let hora of horas" value="{{ hora }}">{{
+                  hora
+                }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="end">
+          <button
+            mat-stroked-button
+            color="primary"
+            (click)="save()"
+            [disabled]="!isValidForm()"
+          >
+            {{ modoEditar ? "Actualizar" : "Crear" }}
+          </button>
+        </div>
+      </mat-card>
+    </div>
+  </form>
+</div>

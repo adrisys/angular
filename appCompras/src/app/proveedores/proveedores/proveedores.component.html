@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="text-center mt-1 p-5 rounded shadow-lg">
+    <h2>Listado de proveedores</h2>
+    <a class="btn btn-success float-md-end mb-2" routerLink="/addprovee">Añadir nuevo proveedor</a>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Correo electrónico</th>
+          <th>Teléfono</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let proveedor of proveedores">
+          <td>{{proveedor.nombre}}</td>
+          <td><a href="mailto:{{proveedor.email}}">{{proveedor.email}}</a></td>
+          <td>{{proveedor.telefono}}</td>
+          <td><a class="btn btn-danger m-3 " (click)="bajaProveedor(proveedor)">Eliminar</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,83 @@
+<form [formGroup]="formBuscarEspacio">
+  <mat-card>
+    <mat-card-subtitle>Datos para la consulta</mat-card-subtitle>
+    <div fxLayout="row" fxLayoutGap="20px">
+      <div fxFlex>
+        <mat-form-field appearance="fill" fxFill>
+          <mat-label>Rango de fechas</mat-label>
+          <mat-date-range-input [rangePicker]="picker">
+            <input
+              matStartDate
+              formControlName="start"
+              placeholder="Start date"
+            />
+            <input matEndDate formControlName="end" placeholder="End date" />
+          </mat-date-range-input>
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+      </div>
+      <div fxFlex>
+        <mat-form-field appearance="outline" fxFill>
+          <mat-label>Hora de inicio</mat-label>
+          <mat-select formControlName="horaInicio">
+            <mat-option *ngFor="let hour of hours" value="{{ hour }}">{{
+              hour
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div fxFlex>
+        <mat-form-field appearance="outline" fxFill>
+          <mat-label>Hora de fin</mat-label>
+          <mat-select formControlName="horaFin">
+            <mat-option *ngFor="let hour of hours" value="{{ hour }}">{{
+              hour
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutGap="20px">
+      <div fxFlex>
+        <mat-form-field appearance="outline" fxFill>
+          <mat-label>Edificio</mat-label>
+          <mat-select formControlName="edificio">
+            <mat-option value="Aulario I">Aulario I</mat-option>
+            <mat-option value="Aulario II">Aulario II</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxFlex>
+        <mat-form-field appearance="outline" fxFill>
+          <mat-label>Aula</mat-label>
+          <mat-select formControlName="aula">
+            <mat-option value="Aula 1">Aula 1</mat-option>
+            <mat-option value="Aula 2">Aula 2</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxFlex>
+        <mat-form-field appearance="outline" fxFill>
+          <mat-label>Texto de búsqueda</mat-label>
+          <input matInput formControlName="busqueda" />
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <button
+        mat-button
+        mat-flat-button
+        color="primary"
+        type="submit"
+        (click)="buscar()"
+      >
+        Buscar
+      </button>
+    </div>
+  </mat-card>
+</form>

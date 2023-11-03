@@ -1,0 +1,95 @@
+{
+  "personas": [
+    {
+      "email": "mtorres@ual.es",
+      "nombre": "Manuel Torres Gil",
+      "telefono": "84030",
+      "unidad": "Departamento de Informática",
+      "cargo": [
+        "Profesor Titular de Universidad",
+        "Director de Secretariado de Innovación Tecnológica"
+      ],
+      "docente": true
+    },
+    {
+      "email": "ggf906@ual.es",
+      "nombre": "Francisco José García García",
+      "telefono": "N/D",
+      "unidad": "STIC",
+      "cargo": [
+        "Gestor Informática"
+      ],
+      "docente": false
+    }
+  ],
+  "solicitudes": [
+    {
+      "nombre": "Manuel Torres Gil",
+      "cargo": "Director de Secretariado de Innovación Tecnológica",
+      "unidad": "Departamento de Informática",
+      "telefono": "84030",
+      "email": "mtorres@ual.es",
+      "tipo": "docente",
+      "nombreActividad": "Taller Angular",
+      "start": null,
+      "end": null,
+      "dia": null,
+      "horaInicio": null,
+      "horaFin": null,
+      "id": 1
+    }
+  ],
+  "espacios": [
+    {
+      "edificio": "Aulario I",
+      "aula": "Aula 2",
+      "fecha": "07/02/2022",
+      "reservas": [
+        {
+          "hora": "09:00 - 12:00",
+          "descripcion": "GRUPO A",
+          "asignatura": "( 12103230 ) - Lengua Clásica: Latín",
+          "profesor": ""
+        }
+      ]
+    },
+    {
+      "edificio": "Aulario I",
+      "aula": "Aula 1",
+      "fecha": "07/02/2022",
+      "reservas": [
+        {
+          "hora": "09:00 - 12:00",
+          "descripcion": "GRUPO UNICO",
+          "asignatura": "( 67104216 ) - Gestión Integral de la Imagen",
+          "profesor": ""
+        }
+      ]
+    },
+    {
+      "edificio": "Aulario II",
+      "aula": "Aula 1",
+      "fecha": "07/02/2022",
+      "reservas": [
+        {
+          "hora": "09:00 - 12:00",
+          "descripcion": "GRUPO A",
+          "asignatura": "( 31103209 ) - Lexicología y Semántica Inglesas",
+          "profesor": ""
+        },
+        {
+          "hora": "12:00 - 15:00",
+          "descripcion": "GRUPO A",
+          "asignatura": "( 12104226 ) - Historia de la Lengua Española II",
+          "profesor": ""
+        },
+        {
+          "hora": "16:00 - 19:00",
+          "descripcion": "GRUPO UNICO",
+          "asignatura": "( 40153329 ) - Teoría de Códigos y Criptografía",
+          "profesor": ""
+        }
+      ]
+    }
+  ]
+}

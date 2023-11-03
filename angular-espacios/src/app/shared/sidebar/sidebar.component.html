@@ -1,0 +1,32 @@
+<div fxLayout="column">
+  <button mat-button routerLink="/">Home</button>
+  <hr />
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Solicitudes </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div fxLayout="column">
+        <div>
+          <button mat-button routerLink="./solicitudes/crear">Crear</button>
+        </div>
+        <div>
+          <button mat-button routerLink="./solicitudes/consultar">
+            Consultar
+          </button>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Espacios </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div fxLayout="column">
+        <a mat-button routerLink="./espacios/consultar">Consultar</a>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <button mat-button (click)="creditos()">Créditos</button>
+</div>

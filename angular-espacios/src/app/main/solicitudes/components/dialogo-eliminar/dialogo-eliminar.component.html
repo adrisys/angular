@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Confirmación de eliminación</h1>
+<div mat-dialog-content class="mat-typography">
+  <h3>Desea eliminar esto?</h3>
+  <p>Reserva para : {{ data.nombre }} - {{ data.cargo }}</p>
+  <p>Actividad: {{ data.nombreActividad }}</p>
+  <p>
+    Desde {{ data.start | date: "dd/MM/yyyy" }} hasta
+    {{ data.end | date: "dd/MM/yyyy" }}. Día: {{ data.dia }}. Hora:
+    {{ data.horaInicio }} - {{ data.horaFin }}
+  </p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close] cdkFocusInitial>Cancelar</button>
+  <button mat-button mat-flat-button color="warn" (click)="eliminar()">
+    Eliminar
+  </button>
+</div>

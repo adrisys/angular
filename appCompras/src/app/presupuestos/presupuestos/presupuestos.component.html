@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="text-center mt-1 p-5 rounded shadow-lg">
+    <h2>Listado de presupuestos</h2>
+    <a class="btn btn-primary float-md-end mb-2" routerLink="/addpres">Añadir nuevo presupuesto</a>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Proveedor</th>
+          <th>Fecha</th>
+          <th>Concepto</th>
+          <th>Base</th>
+          <th>Tipo</th>
+          <th>IVA</th>
+          <th>Total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let presupuesto of presupuestos">
+          <td>{{presupuesto.proveedor}}</td>
+          <td>{{presupuesto.fecha}}</td>
+          <td>{{presupuesto.concepto}}</td>
+          <td>{{presupuesto.base}}</td>
+          <td>{{presupuesto.tipo}}</td>
+          <td>{{presupuesto.iva}}</td>
+          <td>{{presupuesto.total}}</td>
+          <td><a class="btn btn-danger m-3 " (click)="bajaPresupuesto(presupuesto)">Eliminar</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+
+</div>

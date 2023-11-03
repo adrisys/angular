@@ -1,0 +1,27 @@
+<div *ngIf="espacios.length">
+  <div fxLayout="column" fxLayoutAlign="center " fxLayoutGap="10px">
+    <mat-card *ngFor="let espacio of espacios" class="mt-3" fxFill>
+      <mat-card-subtitle>
+        <mat-label class="mat-body-strong">Edificio: </mat-label
+        >{{ espacio.edificio }}
+        <mat-label class="mat-body-strong">Aula: </mat-label>
+        {{ espacio.aula }} <mat-label class="mat-body-strong">Fecha: </mat-label
+        >{{ espacio.fecha }}
+      </mat-card-subtitle>
+      <mat-list>
+        <mat-list-item *ngFor="let reserva of espacio.reservas">
+          <mat-card-content>
+            <mat-label class="mat-body-strong">Hora: </mat-label
+            >{{ reserva.hora }}
+            <mat-label class="mat-body-strong">Descripción: </mat-label
+            >{{ reserva.descripcion }}
+            <mat-label class="mat-body-strong">Asignatura: </mat-label
+            >{{ reserva.asignatura }}
+            <mat-label class="mat-body-strong">Profesor: </mat-label
+            >{{ reserva.profesor }}
+          </mat-card-content>
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+  </div>
+</div>

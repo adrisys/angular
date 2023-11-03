@@ -1,0 +1,81 @@
+{
+  "proveedores": [
+    {
+      "id": 0,
+      "nombre": "Telefonica",
+      "direccion": "Paseo de la Castellana, 100",
+      "cp": "28.010",
+      "localidad": "Madrid",
+      "provincia": "Madrid",
+      "telefono": 911111111,
+      "email": "info@telefonica.com",
+      "contacto": "Juan Pérez"
+    },
+    {
+      "id": 1,
+      "nombre": "Iberdrola",
+      "cif": "B87654321",
+      "direccion": "Príncipe de Vergara, 200",
+      "cp": "28.015",
+      "localidad": "Madrid",
+      "provincia": "Madrid",
+      "telefono": 922222222,
+      "email": "info@iberdrola.com",
+      "contacto": "Laura Martínez"
+    },
+    {
+      "id": 2,
+      "nombre": "empresa2",
+      "cif": "1",
+      "direccion": "d",
+      "cp": "1",
+      "localidad": "s",
+      "provincia": "",
+      "telefono": 666666666,
+      "email": "a@a.com",
+      "contacto": "n"
+    }
+  ],
+  "presupuestos": [
+    {
+      "id": 0,
+      "proveedor": "Amazon",
+      "fecha": "10/6/2018",
+      "concepto": "Discos duros",
+      "base": 70,
+      "tipo": 0.21,
+      "iva": 14.7,
+      "total": 84.7
+    },
+    {
+      "id": 1,
+      "proveedor": "Endesa",
+      "fecha": "15/8/2020",
+      "concepto": "Suministro eléctrico",
+      "base": 150,
+      "tipo": 0.21,
+      "iva": 31.5,
+      "total": 181.5
+    },
+    {
+      "id": 12,
+      "proveedor": "prove",
+      "fecha": "2023-10-02",
+      "concepto": "enove",
+      "base": 3,
+      "tipo": "0.21",
+      "iva": 0.63,
+      "total": 3.63
+    },
+    {
+      "id": 13,
+      "proveedor": "p",
+      "fecha": "2023-10-01",
+      "concepto": "aa",
+      "base": 5,
+      "tipo": "0.04",
+      "iva": 0.2,
+      "total": 5.2
+    }
+  ]
+}
